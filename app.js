@@ -1,4 +1,4 @@
-// MCCG demo v3 — no network calls, no backend, no storage.
+// MCCG demo v4 — no network calls, no backend, no storage.
 // Demo form: validate required fields, then show an on-page notice only.
 (function () {
   "use strict";
@@ -42,7 +42,9 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  // Lighter hero parallax: photo drifts a few pixels while it is on screen.
+  // Gentle hero parallax: the split-hero card photo drifts a few pixels while
+  // it is on screen. Drift is capped (0.02 * 600 = 12px) well inside the
+  // 1.08 baseline scale's headroom, so no edge ever shows inside the card.
   var heroPhoto = document.querySelector(".hero-photo");
   var ticking = false;
   function onScroll() {
@@ -51,7 +53,7 @@
     window.requestAnimationFrame(function () {
       var y = window.scrollY || 0;
       if (!reduced && y < 600 && heroPhoto) {
-        heroPhoto.style.transform = "translateY(" + (y * 0.06).toFixed(1) + "px) scale(1.06)";
+        heroPhoto.style.transform = "translateY(" + (y * 0.02).toFixed(1) + "px) scale(1.08)";
       }
       drawRoad();
       ticking = false;
