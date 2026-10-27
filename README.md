@@ -15,6 +15,10 @@ A responsive editorial website concept for **Motor Carrier Compliance Group LLC 
 
 Open **index.html** in any modern browser, or serve this folder using any static file host. The site has no build step, package manager, runtime dependency, API keys, database, or analytics script.
 
+### GitHub Pages / mobile caching
+
+Production HTML deliberately references **styles.mccg-v6.css** and **app.mccg-v6.js**. These are copied from styles.css and app.js, respectively, with distinct filenames so cached earlier versions cannot break the new markup. **When changing the markup and CSS/JS together, create fresh versioned asset filenames and update the HTML references in the same commit.** Keep the canonical styles.css and app.js files synchronized. This prevents the kind of partial update where the new HTML renders with the prior design's CSS on GitHub Pages.
+
 Files:
 - index.html — semantic website structure and content.
 - styles.css — complete responsive design system, typography, section layouts and animations.
