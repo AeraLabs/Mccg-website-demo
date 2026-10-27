@@ -127,3 +127,7 @@ Use styles.mccg-v11.css for the deployed stylesheet. The JavaScript app.mccg-v9.
 - Adds a distinct, stylized trailer-front wheel tandem at x=215 and x=251 alongside existing rear trailer and tractor axles. This is a design-driven extra axle pair, not a standard five-axle tractor-trailer specification.
 - Adds viewport-observed scroll parallax for hero and service imagery, audience and values photography, process orbit, and restrained graphic accents. Updates are coalesced using requestAnimationFrame, affect transforms only, halve amplitude on small screens and disable completely for reduced-motion preferences.
 - Uses versioned styles.mccg-v12.css, app.mccg-v12.js, and assets/semi-truck-v12.svg to avoid stale cache combinations. Existing demo form behavior remains unchanged.
+
+## v13 — trailer-wide MCCG livery
+
+The existing MCCG logo is rendered over nearly the full trailer side using percentage positioning and `object-fit: fill`. Its overlay aligns inside the trailer's approximately x=9–284, y=21–94 SVG coordinates and now occupies x≈14–275, y≈25–90. This intentionally stretches the source artwork horizontally to make it prominent and readable on a short header animation; the original logo file is unchanged. CSS is versioned as `styles.mccg-v13.css` to prevent mobile browsers mixing cached rules. There are no JavaScript or animation changes.

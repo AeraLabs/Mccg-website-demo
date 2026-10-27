@@ -591,3 +591,37 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
  .hero-route,.approach-orbit,.quick-mark,.contact-compass{transform:none!important}
  .values-visual-caption{transform:translateY(-50%)!important}
 }
+
+
+/* v13 – MCCG livery fills the whole trailer side, not a small contained mark.
+   Coordinates are percentages of the truck art's 460x128 viewBox:
+   trailer side runs approximately x=9..284, y=21..94.
+   Keep a small margin for the outline/riveted edges. */
+.header-truck-runner .trailer-logo {
+  left:3.1%;
+  top:19.5%;
+  width:56.7%;
+  height:50.5%;
+  max-width:none;
+  object-fit:fill;
+  mix-blend-mode:multiply;
+  opacity:1;
+  pointer-events:none;
+}
+/* Mobile inherits the same proportional trailer geometry. */
+@media(max-width:980px) {
+  .header-truck-runner .trailer-logo {
+    left:3.1%;
+    top:19.5%;
+    width:56.7%;
+    height:50.5%;
+  }
+}
+@media(max-width:650px) {
+  .header-truck-runner .trailer-logo {
+    left:3.1%;
+    top:19.5%;
+    width:56.7%;
+    height:50.5%;
+  }
+}
