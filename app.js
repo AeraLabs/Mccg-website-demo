@@ -30,7 +30,7 @@
       if (nav.classList.contains("open") && header && !header.contains(event.target)) setMenu(false);
     });
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 800 && nav.classList.contains("open")) setMenu(false);
+      if (window.innerWidth > 980 && nav.classList.contains("open")) setMenu(false);
     }, { passive: true });
   }
 
