@@ -17,7 +17,7 @@ Open **index.html** in any modern browser, or serve this folder using any static
 
 ### GitHub Pages / mobile caching
 
-Production HTML deliberately references **styles.mccg-v8.css** and **app.mccg-v7.js**. These are copied from styles.css and app.js, respectively, with distinct filenames so cached earlier versions cannot break the new markup. **When changing the markup and CSS/JS together, create fresh versioned asset filenames and update the HTML references in the same commit.** Keep the canonical styles.css and app.js files synchronized. This prevents the kind of partial update where the new HTML renders with the prior design's CSS on GitHub Pages.
+Production HTML deliberately references **styles.mccg-v9.css** and **app.mccg-v9.js**. These are copied from styles.css and app.js, respectively, with distinct filenames so cached earlier versions cannot break the new markup. **When changing the markup and CSS/JS together, create fresh versioned asset filenames and update the HTML references in the same commit.** Keep the canonical styles.css and app.js files synchronized. This prevents the kind of partial update where the new HTML renders with the prior design's CSS on GitHub Pages.
 
 Files:
 - index.html — semantic website structure and content.
@@ -34,7 +34,7 @@ A compact inline-SVG semi-truck runs left-to-right across a dedicated 31–36px 
 
 Only interactive call-to-action buttons and the circular back-to-top control use arrow glyphs. Service cards, audience items, process numbers, editorial callouts and other static content no longer suggest link behavior; service-card hover lift and zoom were removed. Basic text links remain identifiable by underline, not icon clutter. Main consultation CTAs remain in accordance with the client brief.
 
-The styled page uses styles.mccg-v8.css to avoid browsers mixing old and new assets. The JavaScript remains app.mccg-v7.js because no functional changes were needed.
+The styled page uses styles.mccg-v9.css to avoid browsers mixing old and new assets. The JavaScript remains app.mccg-v9.js because no functional changes were needed.
 
 ## Client brief and copy approval
 
@@ -89,3 +89,12 @@ The page can run on any static host (including GitHub Pages, Cloudflare Pages, o
 - Add privacy/legal content appropriate to the actual lead capture configuration.
 
 The website remains intentionally static: lightweight code first, genuine business details before claims, polished but not over-animated.
+
+## v9: Semi-truck animation, intelligent header, photography
+
+- Redrawn the inline SVG as a real articulated long-haul tractor-trailer with a distinct aerodynamic cab, fifth-wheel separation, longer trailer, and tandem wheels. Retains a subtle repeating roadway animation without extra dependencies.
+- The sticky header now slides out of view during sustained down-scroll and returns on upward scrolling, near the page top, or when navigation is open/focused. Mobile navigation and keyboard accessibility remain intact.
+- Replaced seven generic stock scenes with Pexels images depicting actual trucking operations, including a highway semi, equipment maintenance, fleet logistics, a worker reviewing a checklist in a cab, and truck parking. Images remain hosted by Pexels; review cropping, usage and load reliability before final launch.
+- The versions of CSS and JavaScript referenced by index.html were both incremented to v9 to avoid stale browser caches.
+
+Sources for new Pexels images by photo ID: 27508769, 27099096, 6720524, 5410923, 3245122, 6720534, 13961752. The images are for editorial demonstration and do not depict MCCG or its staff.

@@ -34,6 +34,33 @@
     }, { passive: true });
   }
 
+  // Mobile/desktop: hide chrome on deliberate downward scroll, restore on upward
+  // scroll, near the page top, or when a user opens/focuses navigation.
+  let previousScrollY = Math.max(0, window.scrollY);
+  let scrollHeaderTick = false;
+  function updateHeaderVisibility() {
+    if (!header) return;
+    const current = Math.max(0, window.scrollY);
+    const delta = current - previousScrollY;
+    const menuOpen = !!(nav && nav.classList.contains("open"));
+    const interactingWithHeader = header.contains(document.activeElement);
+    if (current < 100 || menuOpen || interactingWithHeader) {
+      header.classList.remove("header-hidden");
+    } else if (delta > 5 && current > 170) {
+      header.classList.add("header-hidden");
+    } else if (delta < -5) {
+      header.classList.remove("header-hidden");
+    }
+    previousScrollY = current;
+    scrollHeaderTick = false;
+  }
+  window.addEventListener("scroll", () => {
+    if (scrollHeaderTick) return;
+    scrollHeaderTick = true;
+    window.requestAnimationFrame(updateHeaderVisibility);
+  }, { passive: true });
+  if (toggle) toggle.addEventListener("click", () => header?.classList.remove("header-hidden"));
+
   // Reveal elements only when visible. No JS and reduced-motion fallbacks are provided in CSS/HTML.
   const reveals = $$(".reveal");
   if (reducedMotion || !("IntersectionObserver" in window)) {
