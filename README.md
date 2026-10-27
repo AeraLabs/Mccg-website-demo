@@ -17,7 +17,7 @@ Open **index.html** in any modern browser, or serve this folder using any static
 
 ### GitHub Pages / mobile caching
 
-Production HTML deliberately references **styles.mccg-v9.css** and **app.mccg-v9.js**. These are copied from styles.css and app.js, respectively, with distinct filenames so cached earlier versions cannot break the new markup. **When changing the markup and CSS/JS together, create fresh versioned asset filenames and update the HTML references in the same commit.** Keep the canonical styles.css and app.js files synchronized. This prevents the kind of partial update where the new HTML renders with the prior design's CSS on GitHub Pages.
+Production HTML deliberately references **styles.mccg-v10.css** and **app.mccg-v9.js**. These are copied from styles.css and app.js, respectively, with distinct filenames so cached earlier versions cannot break the new markup. **When changing the markup and CSS/JS together, create fresh versioned asset filenames and update the HTML references in the same commit.** Keep the canonical styles.css and app.js files synchronized. This prevents the kind of partial update where the new HTML renders with the prior design's CSS on GitHub Pages.
 
 Files:
 - index.html — semantic website structure and content.
@@ -34,7 +34,7 @@ A compact inline-SVG semi-truck runs left-to-right across a dedicated 31–36px 
 
 Only interactive call-to-action buttons and the circular back-to-top control use arrow glyphs. Service cards, audience items, process numbers, editorial callouts and other static content no longer suggest link behavior; service-card hover lift and zoom were removed. Basic text links remain identifiable by underline, not icon clutter. Main consultation CTAs remain in accordance with the client brief.
 
-The styled page uses styles.mccg-v9.css to avoid browsers mixing old and new assets. The JavaScript remains app.mccg-v9.js because no functional changes were needed.
+The styled page uses styles.mccg-v10.css to avoid browsers mixing old and new assets. The JavaScript remains app.mccg-v9.js because no functional changes were needed.
 
 ## Client brief and copy approval
 
@@ -98,3 +98,17 @@ The website remains intentionally static: lightweight code first, genuine busine
 - The versions of CSS and JavaScript referenced by index.html were both incremented to v9 to avoid stale browser caches.
 
 Sources for new Pexels images by photo ID: 27508769, 27099096, 6720524, 5410923, 3245122, 6720534, 13961752. The images are for editorial demonstration and do not depict MCCG or its staff.
+
+## v10: correct five-axle semi and visible truck roof
+
+The animated truck is now authored as an independent, scalable asset: assets/semi-truck-v10.svg.
+It depicts a conventional American long-hood tractor with a sleeper and a detachable box semi-trailer:
+- trailer tandem axles near the trailer's rear (SVG x = 48, 73);
+- tractor's tandem drive axles behind the cab (x = 317, 342);
+- steer axle under the front hood (x = 438).
+
+These are **five visible wheel positions** in side profile representing the familiar eighteen-tire / five-axle tractor-trailer arrangement (two steer tires; dual tires on the eight other axle ends). The earlier demo had the trailer wheels near its middle, and clipped the roof by positioning an oversized SVG above the narrow roadway.
+
+The animation is now rendered in a reserved 69px desktop / 64px mobile track using a 460 × 128 SVG scaled to fit. The truck's highest point, exhaust, hood, and the wheel bottoms fit within the strip; no negative top offsets. The rest of the site, including scroll-aware header visibility, is unchanged.
+
+The markup uses styles.mccg-v10.css for cache busting. app.mccg-v9.js is unchanged.

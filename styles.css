@@ -485,3 +485,52 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 .service-image img{object-position:center 52%}
 .people-art>img{object-position:center 40%}
 .values-visual>img{object-position:center 47%}
+
+/* v10 / accurate 5-axle long-hood semi, full height preserved on all screens. */
+.header-highway{
+  height:69px;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(180deg,#edf5f0 0%,#f8faf8 100%);
+}
+.header-truck-runner{
+  position:absolute;
+  left:0;
+  top:1px;
+  width:238px;
+  height:auto;
+  animation:mccg-truck-drive 24s linear infinite;
+  will-change:transform;
+}
+.header-semi{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:460 / 128;
+  object-fit:contain;
+  max-width:none;
+  overflow:hidden;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+.highway-lane{bottom:5px}
+@keyframes mccg-truck-drive{
+  from{transform:translateX(-260px)}
+  to{transform:translateX(calc(100vw + 30px))}
+}
+@media(max-width:650px){
+  .header-highway{height:64px}
+  .header-truck-runner{top:2px;left:0;width:216px;height:auto}
+  .highway-lane{bottom:4px}
+}
+@media(max-width:370px){
+  .header-truck-runner{width:205px;top:3px}
+}
+@media(prefers-reduced-motion:reduce){
+  .header-truck-runner{
+    animation:none!important;
+    transform:none!important;
+    left:10px;
+    will-change:auto;
+  }
+}
