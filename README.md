@@ -131,3 +131,9 @@ Use styles.mccg-v11.css for the deployed stylesheet. The JavaScript app.mccg-v9.
 ## v13 — trailer-wide MCCG livery
 
 The existing MCCG logo is rendered over nearly the full trailer side using percentage positioning and `object-fit: fill`. Its overlay aligns inside the trailer's approximately x=9–284, y=21–94 SVG coordinates and now occupies x≈14–275, y≈25–90. This intentionally stretches the source artwork horizontally to make it prominent and readable on a short header animation; the original logo file is unchanged. CSS is versioned as `styles.mccg-v13.css` to prevent mobile browsers mixing cached rules. There are no JavaScript or animation changes.
+
+## v14 — typography, spacing and readability polish (copy locked)
+
+This refinement is presentation-only. Every visible line of copy, punctuation, service description, CTA, form message, the exact client-requested hero headline, and the section order is preserved byte-for-byte. The only index.html change is the CSS filename increment from styles.mccg-v13.css to styles.mccg-v14.css.
+
+The stylesheet now applies a consistent editorial type scale and vertical rhythm, equalizes service-card content spacing, balances form labels and inputs, aligns call-to-action sizing, refines the about/process/values/contact/FAQ sections, and tightens mobile layouts at 980/800/650/375px. Contrast for small labels and disclosures is strengthened on light backgrounds. The existing animated branded truck, parallax layer, navigation and demo-only contact behavior are unchanged. Use the new stylesheet name to avoid stale browser caches. Final live visual QA on real desktop/mobile browsers is recommended.
