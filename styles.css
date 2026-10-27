@@ -6,7 +6,7 @@
   --radius:26px;--ease:cubic-bezier(.22,1,.36,1);
   --shadow:0 20px 65px rgba(16,44,57,.07);
   --shadow-raised:0 30px 80px rgba(16,44,57,.15);
-  --header-height:84px
+  --header-height:120px
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height) + 24px)}
@@ -57,7 +57,7 @@ button,a,input,textarea{-webkit-tap-highlight-color:transparent}
 .text-link{display:inline-flex;align-items:center;gap:16px;color:var(--white);text-decoration:none;font-weight:780;font-size:14px;position:relative;padding-bottom:6px}
 .text-link::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:currentColor;opacity:.45;transition:transform .3s var(--ease);transform-origin:left}
 .text-link:hover::after{transform:scaleX(.6)}
-.text-link span{font-size:17px}
+
 .dark-link{color:var(--ink)}
 /* HERO / deep-ink editorial lead, road photography as the central visual */
 .hero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink-deep);color:#f2f9f5}
@@ -93,7 +93,7 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 @keyframes route-float{50%{transform:translateY(-13px)}}
 .hero-tail{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;min-height:66px;border-top:1px solid rgba(255,255,255,.14);font-size:10px;font-weight:850;letter-spacing:.16em;color:#92aca4}
 .scroll-cue{color:var(--mint);display:inline-flex;align-items:center;gap:18px;text-decoration:none}
-.scroll-cue span{font-size:19px}
+
 /* shared sections */
 .section{padding:118px 0}
 .section-index{display:inline-flex;align-items:center;gap:13px;color:#637e76;font-size:10px;letter-spacing:.16em;line-height:1.5;font-weight:860}
@@ -112,7 +112,7 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 .quick-intro h2{font-size:clamp(43px,3.65vw,61px);position:relative;z-index:1}
 .quick-intro p{max-width:340px;color:#58746b;font-size:17px;line-height:1.75;margin:26px 0 0;position:relative;z-index:1}
 .quick-mark{margin-top:auto;display:flex;justify-content:space-between;align-items:center;width:100%;font-size:11px;letter-spacing:.15em;font-weight:860;color:#2f705a;position:relative;z-index:1}
-.quick-mark b{font-size:68px;line-height:1;font-weight:300;color:#8abd9c}
+
 .quick-form{padding:45px 51px 42px}
 .form-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:27px}
 .form-heading strong{font-size:22px;font-weight:820;letter-spacing:-.04em}
@@ -137,18 +137,18 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 .services-section{background:var(--paper)}
 .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .service-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:23px;overflow:hidden;min-width:0;box-shadow:0 10px 38px rgba(16,44,57,.04);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
-.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-raised)}
+.service-card:hover{box-shadow:var(--shadow)}
 .service-image{height:240px;overflow:hidden;position:relative;background:#d0dcd4}
 .service-image::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(5,26,23,.43));pointer-events:none}
 .service-image img{height:100%;width:100%;object-fit:cover;transition:transform .9s var(--ease),filter .4s ease}
-.service-card:hover img{transform:scale(1.075);filter:saturate(1.1)}
+
 .service-image span{position:absolute;bottom:19px;left:23px;z-index:1;font-size:10px;font-weight:900;letter-spacing:.19em;color:#fff}
 .service-body{min-height:192px;position:relative;padding:28px 32px 30px}
 .service-kicker{font-size:9px;font-weight:850;letter-spacing:.16em;color:#62927c}
 .service-body h3{margin:9px 0 6px;font-size:29px;line-height:1.12;letter-spacing:-.045em}
 .service-body p{max-width:360px;font-size:14px;color:#647b73;margin:0}
-.card-arrow{position:absolute;right:28px;top:48px;color:#398164;font-size:24px;transition:transform .3s var(--ease)}
-.service-card:hover .card-arrow{transform:translate(4px,-4px)}
+
+
 .service-footnote{display:flex;align-items:center;gap:17px;margin-top:26px;border-top:1px solid var(--line);padding-top:23px}
 .footnote-symbol{font-size:29px;line-height:1;color:#459a78}
 .service-footnote p{margin:0;max-width:740px;color:#698078;font-size:13px}
@@ -170,7 +170,7 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 .audience-list li{display:flex;align-items:center;gap:20px;padding:19px 0;border-bottom:1px solid #c3d5c8}
 .audience-list li>span:first-child{font-size:11px;color:#668e7c;letter-spacing:.08em;font-weight:800}
 .audience-list strong{font-size:clamp(15px,1.5vw,19px);font-weight:760;letter-spacing:-.025em}
-.audience-arrow{margin-left:auto;font-size:17px;color:#49906d}
+
 /* Approach / signpost-style cards */
 .approach-section{position:relative;isolation:isolate;overflow:hidden;background:var(--ink-deep);color:#fff}
 .approach-orbit{position:absolute;right:-160px;top:-520px;width:1050px;height:1050px;border:1px solid rgba(181,232,205,.12);border-radius:50%;box-shadow:0 0 0 100px rgba(181,232,205,.015),0 0 0 210px rgba(181,232,205,.012);pointer-events:none}
@@ -221,7 +221,7 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 .contact-panel-side{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:27px;border-left:1px solid rgba(255,255,255,.15);padding-left:40px}
 .contact-panel-side>span{font-size:10px;font-weight:850;letter-spacing:.17em;color:#b6e8cf}
 .contact-compass{display:grid;place-items:center;width:175px;height:175px;border:1px solid rgba(202,240,225,.42);border-radius:50%;box-shadow:0 0 0 20px rgba(202,240,225,.03),0 0 0 40px rgba(202,240,225,.02)}
-.contact-compass span{font-size:95px;line-height:1;color:var(--mint);font-weight:250}
+
 .contact-panel-side p{font-size:12px;line-height:1.6;margin:0}
 .contact-panel-side strong{color:#fff;font-weight:760}
 /* FAQs + footer */
@@ -256,7 +256,7 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 }
 @media(max-width:980px){
   .wrap{width:min(100% - 50px,1260px)}
-  :root{--header-height:74px}
+  :root{--header-height:110px}
   .utility-inner{letter-spacing:.1em}
   .brand-logo{width:165px;max-width:165px;max-height:56px;height:auto}
   .hero-layout{min-height:auto;padding:65px 0 74px;gap:36px}
@@ -301,7 +301,7 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
   .quick-intro{min-height:300px;padding:39px 40px}
   .quick-intro p{max-width:500px;margin-top:17px}
   .quick-mark{margin-top:26px}
-  .quick-mark b{font-size:42px}
+  
   .quick-form{padding:38px 40px}
   .section-head{grid-template-columns:1fr;gap:18px}
   .section-head p{max-width:640px}
@@ -314,14 +314,14 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
   .contact-panel{grid-template-columns:1fr;gap:32px}
   .contact-panel-side{flex-direction:row;justify-content:space-between;text-align:left;align-items:center;border-top:1px solid rgba(255,255,255,.15);border-left:0;padding:22px 0 0;gap:20px}
   .contact-compass{width:80px;height:80px;box-shadow:none;flex:none}
-  .contact-compass span{font-size:48px}
+  
   .contact-panel-side>span{display:none}
   .faq-inner{gap:5%}
 }
 @media(max-width:650px){
   .wrap{width:min(100% - 36px,1260px)}
   .utility-inner{font-size:9px;height:31px}
-  :root{--header-height:69px}
+  :root{--header-height:100px}
   .brand-logo{width:156px;max-width:156px;max-height:56px;height:auto}
   .brand-copy strong{font-size:27px}
   .brand-copy small{font-size:8px}
@@ -356,7 +356,7 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
   .service-image{height:210px}
   .service-body{padding:25px 25px 26px;min-height:168px}
   .service-body h3{font-size:26px}
-  .card-arrow{right:23px;top:43px}
+  
   .service-footnote{align-items:flex-start;flex-wrap:wrap;gap:11px}
   .service-footnote p{flex:1 1 80%;font-size:12px}
   .service-footnote a{margin-left:39px}
@@ -418,3 +418,48 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 @media(min-width:981px){.nav-panel{gap:12px}.nav-link{padding-inline:10px}.nav-cta{font-size:12px;padding-inline:15px;gap:10px}}
 @media(max-width:980px){.nav-panel{z-index:5}.nav-toggle{z-index:7}.brand-logo{width:165px;max-width:165px}}
 @media(max-width:650px){.brand-logo{width:154px;max-width:154px}.hero h1 em{white-space:normal}}
+
+/* v8 / a quiet animated semi travels above the MCCG logo, never across content. */
+.header-inner{min-height:84px}
+.header-highway{
+  position:relative;height:36px;overflow:hidden;isolation:isolate;pointer-events:none;
+  background:linear-gradient(180deg,#eaf2ed 0%,#f8faf8 100%);
+  border-bottom:1px solid rgba(42,89,79,.08)
+}
+.highway-lane{
+  position:absolute;z-index:0;left:0;right:0;bottom:1px;height:1px;
+  background:repeating-linear-gradient(90deg,#b3cbc0 0 24px,transparent 24px 46px);
+  opacity:.67
+}
+.header-truck-runner{
+  position:absolute;z-index:1;left:-128px;top:-3px;width:116px;height:42px;
+  animation:mccg-truck-drive 19s linear infinite;will-change:transform
+}
+.header-semi{display:block;width:100%;height:100%;overflow:visible}
+.semi-wheel{transform-box:fill-box;transform-origin:center;animation:mccg-wheels .8s linear infinite}
+@keyframes mccg-truck-drive{from{transform:translateX(0)}to{transform:translateX(calc(100vw + 165px))}}
+@keyframes mccg-wheels{to{transform:rotate(360deg)}}
+/* Informational surfaces have no misleading link chevrons, hover lifts, or arrows. */
+.service-card{cursor:default}
+.service-card:hover{transform:none;box-shadow:0 10px 38px rgba(16,44,57,.04)}
+.service-card:hover img{transform:none;filter:none}
+.floating-note-icon{gap:4px;transform:rotate(-32deg)}
+.floating-note-icon i{display:block;width:3px;height:22px;border-radius:6px;background:#2a725b}
+.floating-note-icon i+ i{height:15px;opacity:.6}
+.quick-rule{display:block;width:38px;height:2px;background:#8abd9c;border-radius:2px}
+.footnote-symbol{font-size:22px;line-height:1.2}
+.contact-road-icon{width:95px;height:95px;color:var(--mint);display:block}
+.step-number{justify-content:flex-start}
+@media(max-width:980px){
+  .header-inner{min-height:74px}
+}
+@media(max-width:650px){
+  .header-inner{min-height:69px}
+  .header-highway{height:31px}
+  .header-truck-runner{left:-110px;top:-2px;width:98px;height:36px}
+  .contact-road-icon{width:52px;height:52px}
+}
+@media(prefers-reduced-motion:reduce){
+  .header-truck-runner{animation:none!important;left:12px;transform:none!important;will-change:auto}
+  .semi-wheel{animation:none!important}
+}
