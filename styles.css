@@ -567,3 +567,27 @@ h1 em,h2 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-s
 @media(prefers-reduced-motion:reduce){
  .header-truck-runner{animation:none!important;transform:none!important;left:5px;top:8px}
 }
+
+/* v12 | centered trailer branding and composited, clipped image parallax. */
+.header-truck-runner .trailer-logo{left:17px;top:19px;width:119px;height:27px;object-fit:contain;mix-blend-mode:multiply}
+@media(max-width:980px){.header-truck-runner .trailer-logo{left:16px;top:18px;width:110px;height:25px}}
+@media(max-width:650px){.header-truck-runner .trailer-logo{left:15px;top:17px;width:103px;height:23px}}
+/* Scroll-driven motion does not change layout. Imagery extends past the masks to avoid gaps. */
+.hero-photo{transform:translate3d(0,var(--parallax-y,0px),0) scale(1.19)!important;transition:none;will-change:transform}
+.service-image img{transform:translate3d(0,var(--parallax-y,0px),0) scale(1.19)!important;transition:none;will-change:transform}
+.people-art>img{transform:translate3d(0,var(--parallax-y,0px),0) scale(1.19)!important;transition:none;will-change:transform}
+.values-visual>img{transform:translate3d(0,var(--parallax-y,0px),0) scale(1.18)!important;transition:none;will-change:transform}
+.hero-photo-frame,.service-image,.people-art,.values-visual{overflow:hidden}
+.hero-route{transform:translate3d(0,var(--parallax-y,0px),0);animation:none}
+.approach-orbit{transform:translate3d(0,var(--parallax-y,0px),0)}
+.contact-panel-bg{transform:translate3d(0,var(--parallax-y,0px),0) scale(1.11)}
+.contact-compass{transform:translate3d(0,var(--parallax-y,0px),0)}
+.quick-mark{transform:translate3d(0,var(--parallax-y,0px),0)}
+.values-visual-caption{transform:translate3d(0,calc(-50% + var(--parallax-y,0px)),0)}
+@media(prefers-reduced-motion:reduce){
+ [data-parallax]{--parallax-y:0px!important;will-change:auto!important;transition:none!important}
+ .hero-photo,.service-image img,.people-art>img,.values-visual>img{transform:none!important}
+ .contact-panel-bg{transform:none!important}
+ .hero-route,.approach-orbit,.quick-mark,.contact-compass{transform:none!important}
+ .values-visual-caption{transform:translateY(-50%)!important}
+}

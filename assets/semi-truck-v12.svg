@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="128" viewBox="0 0 460 128" role="img" aria-label="Classic long-hood semi-truck with sleeper cab and box trailer">
+  <title>Five-axle long-haul tractor-trailer</title>
+  <desc>American conventional tractor and box semi-trailer in side profile, facing right. Two closely spaced trailer axles near the trailer's rear, two tractor drive axles behind the sleeper, and one front steering axle under the hood.</desc>
+  <defs>
+    <linearGradient id="trailerBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="53%" stop-color="#f1f7f3"/>
+      <stop offset="100%" stop-color="#ccded8"/>
+    </linearGradient>
+    <linearGradient id="cabBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#398da0"/>
+      <stop offset="49%" stop-color="#22667a"/>
+      <stop offset="100%" stop-color="#113b52"/>
+    </linearGradient>
+    <linearGradient id="hoodBody" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#387e90"/><stop offset="1" stop-color="#163e52"/>
+    </linearGradient>
+  </defs>
+  <!-- Ground contact and long 53-foot-style enclosed semi-trailer. -->
+  <path d="M13 122H456" stroke="#a5c5b9" stroke-opacity=".35" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="9" y="21" width="275" height="73" rx="2.5" fill="url(#trailerBody)" stroke="#5f8888" stroke-width="2"/>
+  <path d="M15 26H278" stroke="#fff" stroke-width="3.4" opacity=".85"/>
+  <path d="M15 86H278" stroke="#9bb8b2" stroke-width="2"/>
+  <path d="M15 30V90 M278 30V90" stroke="#9fbbb6" stroke-width="2"/>
+  <path d="M21 34H270" stroke="#d7e7e0" stroke-width="1.2"/>
+  <path d="M20 94H284" stroke="#355a60" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Tandem trailer axles positioned near the trailer's REAR (left end). -->
+  <path d="M35 91V102H86V91" stroke="#657b7e" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="21" y="94" width="6" height="12" rx="1" fill="#446a6d"/>
+  <path d="M274 94V104" stroke="#547476" stroke-width="3.5"/>
+  <path d="M268 104H280" stroke="#547476" stroke-width="3"/>
+  <!-- Detachable trailer and tractor fifth-wheel coupling. -->
+  <path d="M283 88H306L315 94H281Z" fill="#294e5a"/>
+  <path d="M290 94L309 98" stroke="#203e49" stroke-width="4" stroke-linecap="round"/>
+  <!-- Tractor frame and fuel tanks. The fifth wheel is behind the sleeper. -->
+  <path d="M288 93H436L455 101H287Z" fill="#274d5a" stroke="#1d3e49" stroke-width="2"/>
+  <rect x="347" y="92" width="43" height="8" rx="3" fill="#a3bdc0" stroke="#628992" stroke-width="1.4"/>
+  <path d="M351 97H385" stroke="#e9f2ef" stroke-width="1.7"/>
+  <!-- Rear side of sleeper and narrow chrome vertical exhaust stacks. -->
+  <path d="M353 41V12" stroke="#6c8e96" stroke-width="4.3" stroke-linecap="round"/>
+  <path d="M350 12H356" stroke="#e3efec" stroke-width="2.5"/>
+  <path d="M373 42V18" stroke="#6c8e96" stroke-width="3" stroke-linecap="round"/>
+  <!-- Cab / sleeper, taller than the hood, recognizable classic long-nose shape. -->
+  <path d="M341 90V42Q341 31 352 30H392Q402 30 410 39L421 64V91Z"
+        fill="url(#cabBody)" stroke="#163f51" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M346 45V90" stroke="#74a1a3" stroke-width="1.7" opacity=".75"/>
+  <path d="M351 43V87H373V39H355Q351 39 351 43Z" fill="#265c70" opacity=".35"/>
+  <path d="M354 44V72" stroke="#9ec2b9" stroke-width="1.2" opacity=".6"/>
+  <path d="M374 36V91" stroke="#143d4c" stroke-width="2"/>
+  <!-- Tall trapezoid windshield and driver's door. -->
+  <path d="M382 37H394Q400 37 404 44L413 61H382Z"
+        fill="#badbdd" stroke="#347687" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M386 40L392 57" stroke="#f5ffff" stroke-width="2.3" opacity=".7"/>
+  <path d="M381 66H414V90H381Z" fill="#2f7484" opacity=".24"/>
+  <path d="M386 67H394" stroke="#e2f2ef" stroke-width="2" stroke-linecap="round"/>
+  <path d="M400 82H412" stroke="#174053" stroke-width="2" stroke-linecap="round"/>
+  <!-- West Coast mirror mounted at the driver's window. -->
+  <path d="M416 50H422V66H416Z" fill="#799da4" stroke="#204958" stroke-width="1.4"/>
+  <path d="M416 55L411 60" stroke="#8db7ba" stroke-width="2"/>
+  <!-- Distinct long engine hood projects forward of cab. -->
+  <path d="M419 71L436 69Q448 69 452 75L456 93H420Z"
+        fill="url(#hoodBody)" stroke="#163f51" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M424 76H451" stroke="#81bdb1" stroke-width="1.9" opacity=".8"/>
+  <path d="M452 76L457 80V94H452Z" fill="#c7d7d5" stroke="#567d86" stroke-width="1"/>
+  <path d="M454 80V92" stroke="#597c83" stroke-width="1.4" stroke-dasharray="2 2"/>
+  <rect x="451" y="77" width="6" height="4" rx="1" fill="#f0d4a1"/>
+  <path d="M454 94H459V101H449" stroke="#6e8586" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <!-- Steer axle under long hood; drive tandems tucked beneath trailer nose on fifth-wheel tractor. -->
+  <path d="M290 97V107H341V97" stroke="#385a64" stroke-width="4" fill="none"/>
+  <path d="M433 96V104H452V96" stroke="#325362" stroke-width="3" fill="none"/>
+  <!-- Additional tandem under the trailer front, matching the requested marked area. -->
+  <path d="M200 93 V99 H268 V93" fill="none" stroke="#42646a" stroke-width="4" stroke-linejoin="round" opacity=".88"/>
+  <g data-axle="trailer-front-1"><circle cx="215" cy="108" r="12.6" fill="#142830" stroke="#0a1c23" stroke-width="1.5"/><circle cx="215" cy="108" r="7" fill="#a4bfc0" stroke="#d9e8e4" stroke-width="1"/><circle cx="215" cy="108" r="3.2" fill="#5e8189"/><path d="M209.5 108h11 M215 102.5v11" stroke="#5f8389" stroke-width="1" opacity=".5"/></g>
+  <g data-axle="trailer-front-2"><circle cx="251" cy="108" r="12.6" fill="#142830" stroke="#0a1c23" stroke-width="1.5"/><circle cx="251" cy="108" r="7" fill="#a4bfc0" stroke="#d9e8e4" stroke-width="1"/><circle cx="251" cy="108" r="3.2" fill="#5e8189"/><path d="M245.5 108h11 M251 102.5v11" stroke="#5f8389" stroke-width="1" opacity=".5"/></g>
+  <g data-axle="trailer-rear-1"><circle cx="48" cy="108" r="12.6" fill="#142830" stroke="#0a1c23" stroke-width="1.5"/><circle cx="48" cy="108" r="7" fill="#a4bfc0" stroke="#d9e8e4" stroke-width="1"/><circle cx="48" cy="108" r="3.2" fill="#5e8189"/><path d="M42.5 108h11 M48 102.5v11" stroke="#5f8389" stroke-width="1" opacity=".5"/></g>
+  <g data-axle="trailer-rear-2"><circle cx="73" cy="108" r="12.6" fill="#142830" stroke="#0a1c23" stroke-width="1.5"/><circle cx="73" cy="108" r="7" fill="#a4bfc0" stroke="#d9e8e4" stroke-width="1"/><circle cx="73" cy="108" r="3.2" fill="#5e8189"/><path d="M67.5 108h11 M73 102.5v11" stroke="#5f8389" stroke-width="1" opacity=".5"/></g>
+  <g data-axle="tractor-drive-1"><circle cx="299" cy="108" r="12.6" fill="#142830" stroke="#0a1c23" stroke-width="1.5"/><circle cx="299" cy="108" r="7" fill="#a4bfc0" stroke="#d9e8e4" stroke-width="1"/><circle cx="299" cy="108" r="3.2" fill="#5e8189"/><path d="M293.5 108h11 M299 102.5v11" stroke="#5f8389" stroke-width="1" opacity=".5"/></g>
+  <g data-axle="tractor-drive-2"><circle cx="324" cy="108" r="12.6" fill="#142830" stroke="#0a1c23" stroke-width="1.5"/><circle cx="324" cy="108" r="7" fill="#a4bfc0" stroke="#d9e8e4" stroke-width="1"/><circle cx="324" cy="108" r="3.2" fill="#5e8189"/><path d="M318.5 108h11 M324 102.5v11" stroke="#5f8389" stroke-width="1" opacity=".5"/></g>
+  <g data-axle="tractor-steer"><circle cx="438" cy="108" r="12.6" fill="#142830" stroke="#0a1c23" stroke-width="1.5"/><circle cx="438" cy="108" r="7" fill="#a4bfc0" stroke="#d9e8e4" stroke-width="1"/><circle cx="438" cy="108" r="3.2" fill="#5e8189"/><path d="M432.5 108h11 M438 102.5v11" stroke="#5f8389" stroke-width="1" opacity=".5"/></g>
+</svg>

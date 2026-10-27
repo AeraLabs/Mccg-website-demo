@@ -120,3 +120,10 @@ The stationary logo has been removed from the header. The original MCCG Logo.png
 The side-view semi displays five axle positions: two trailer axles at the back, two tractor drive axles repositioned immediately under the trailer's front connection, and one steer axle beneath the hood. A tractor-trailer normally does not have independent front trailer wheels while hitched; the tractor's drives carry the nose through the fifth wheel. This demo preserves that mechanical arrangement.
 
 Use styles.mccg-v11.css for the deployed stylesheet. The JavaScript app.mccg-v9.js remains unchanged.
+
+## v12: Branded trailer adjustment and scroll depth
+
+- Fine-tunes MCCG logo placement toward the visual center of the long trailer in the single-row header.
+- Adds a distinct, stylized trailer-front wheel tandem at x=215 and x=251 alongside existing rear trailer and tractor axles. This is a design-driven extra axle pair, not a standard five-axle tractor-trailer specification.
+- Adds viewport-observed scroll parallax for hero and service imagery, audience and values photography, process orbit, and restrained graphic accents. Updates are coalesced using requestAnimationFrame, affect transforms only, halve amplitude on small screens and disable completely for reduced-motion preferences.
+- Uses versioned styles.mccg-v12.css, app.mccg-v12.js, and assets/semi-truck-v12.svg to avoid stale cache combinations. Existing demo form behavior remains unchanged.

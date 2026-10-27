@@ -124,6 +124,45 @@
   window.addEventListener("resize", requestPaint, { passive: true });
   paintScroll();
 
+  // Lightweight, viewport-gated scroll-linked depth. One rAF for all visible nodes.
+  // CSS transforms only: avoids layout recalculation and preserves normal touch scrolling.
+  if (!reducedMotion && "IntersectionObserver" in window) {
+    const layers = $("[data-parallax]");
+    const active = new Set();
+    const strengths = { hero: 22, route: 13, mark: 8, service: 13, portrait: 24, orbit: 34, wide: 21, caption: 11, backdrop: 22, compass: 9 };
+    const mobile = () => window.matchMedia("(max-width: 650px)").matches;
+    let pending = false;
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) active.add(entry.target);
+        else { active.delete(entry.target); entry.target.style.setProperty("--parallax-y", "0px"); }
+      });
+      queue();
+    }, { rootMargin: "120px 0px 120px 0px" });
+    layers.forEach(el => observer.observe(el));
+    function paint() {
+      pending = false;
+      const vh = Math.max(1, window.innerHeight);
+      const factor = mobile() ? 0.48 : 1;
+      active.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const position = ((vh * 0.5) - (rect.top + rect.height * 0.5)) / Math.max(vh, rect.height);
+        const limited = Math.max(-1, Math.min(1, position * 2));
+        const px = limited * (strengths[el.dataset.parallax] || 12) * factor;
+        el.style.setProperty("--parallax-y", px.toFixed(2) + "px");
+      });
+    }
+    function queue() {
+      if (pending || document.hidden) return;
+      pending = true;
+      window.requestAnimationFrame(paint);
+    }
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue, { passive: true });
+    document.addEventListener("visibilitychange", queue);
+    queue();
+  }
+
   // This is intentionally ONLY a demo. Do not add fetch, mailto with form data,
   // localStorage or any other transmission without the client's approval.
   const form = $("#demo-contact-form");
