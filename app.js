@@ -1,13 +1,8 @@
-// MCCG homepage demo — interaction only. No tracking, no network calls.
-// DEMO FORM: The contact form below has no backend. Submit only reveals an
-// on-page demo notice; nothing is sent or stored.
-
+// MCCG demo v2 — no network calls, no backend, no storage.
+// Demo form: validate required fields, then show an on-page notice only.
 (function () {
   "use strict";
 
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // Footer year (display only).
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
@@ -19,15 +14,21 @@
       var open = nav.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      toggle.textContent = open ? "Close" : "Menu";
+    });
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      });
     });
   }
 
-  // Subtle scroll reveals.
-  var revealEls = document.querySelectorAll(".reveal");
-  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-  } else {
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Scroll reveals.
+  var reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduced) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -36,106 +37,76 @@
         }
       });
     }, { threshold: 0.12 });
-    revealEls.forEach(function (el) { observer.observe(el); });
+    reveals.forEach(function (el) { observer.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  // Parallax hero: transform only, requestAnimationFrame, layered speeds.
-  // Simplified/disabled on small screens and when reduced motion is requested.
-  var ridge = document.querySelector(".parallax-ridge");
-  var highway = document.querySelector(".parallax-highway");
-  var hero = document.querySelector(".hero");
+  // Lighter hero parallax: ridge drifts a few pixels, highway a touch more.
+  var ridge = document.querySelector(".scenery-ridge");
+  var highway = document.querySelector(".scenery-highway");
   var ticking = false;
-
-  function updateParallax() {
-    ticking = false;
-    if (!hero || !ridge || !highway) return;
-    if (prefersReducedMotion || window.innerWidth < 640) {
-      ridge.style.transform = "";
-      highway.style.transform = "";
-      return;
-    }
-    var rect = hero.getBoundingClientRect();
-    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-    // Hero is at the top of the page, so scrollY is its progress.
-    var progress = Math.max(0, window.scrollY);
-    // Ridge (far layer) moves slowest, highway (near layer) moves fastest.
-    ridge.style.transform = "translate3d(0, " + (progress * 0.12) + "px, 0)";
-    highway.style.transform = "translate3d(0, " + (progress * 0.28) + "px, 0)";
-  }
-
-  function requestParallax() {
-    if (!ticking) {
-      ticking = true;
-      window.requestAnimationFrame(updateParallax);
-    }
-  }
-
-  var parallaxEnabled = !prefersReducedMotion && window.innerWidth >= 640;
-  if (parallaxEnabled) {
-    window.addEventListener("scroll", requestParallax, { passive: true });
-    window.addEventListener("resize", function () {
-      if (window.innerWidth < 640) {
-        ridge.style.transform = "";
-        highway.style.transform = "";
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      var y = window.scrollY || 0;
+      if (!reduced && y < 600) {
+        if (ridge) ridge.style.transform = "translateY(" + (y * 0.04).toFixed(1) + "px)";
+        if (highway) highway.style.transform = "translateY(" + (y * 0.08).toFixed(1) + "px)";
       }
+      drawRoad();
+      ticking = false;
     });
-    updateParallax();
   }
 
-  // 3-step road line: draws itself with scroll progress through the steps block.
-  var roadPath = document.getElementById("steps-road-path");
+  // Steps road: line draws itself as the section scrolls into view.
+  var road = document.getElementById("steps-road-path");
+  var roadDot = document.getElementById("steps-road-dot");
   var steps = document.getElementById("steps");
-  if (roadPath && steps) {
-    var length = 0;
-    try { length = roadPath.getTotalLength(); } catch (e) { length = 880; }
-    if (prefersReducedMotion) {
-      roadPath.style.strokeDashoffset = "0";
-    } else {
-      // Keep the dashed look, but reveal it by offsetting the dash pattern.
-      // Use a solid overlay trick: set dasharray to the full length for the draw,
-      // then restore the dashed pattern once fully drawn.
-      roadPath.style.strokeDasharray = String(length);
-      roadPath.style.strokeDashoffset = String(length);
-      var drawing = false;
-      var updateRoad = function () {
-        drawing = false;
-        if (window.innerWidth < 820) return;
-        var rect = steps.getBoundingClientRect();
-        var viewport = window.innerHeight;
-        var start = viewport * 0.9;
-        var end = viewport * 0.3;
-        var total = start - end;
-        var travelled = start - rect.top;
-        var p = Math.min(1, Math.max(0, travelled / total));
-        roadPath.style.strokeDashoffset = String(length * (1 - p));
-        if (p >= 1) {
-          roadPath.style.strokeDasharray = "14 12";
-          roadPath.style.strokeDashoffset = "0";
-        }
-      };
-      var requestRoad = function () {
-        if (!drawing) {
-          drawing = true;
-          window.requestAnimationFrame(updateRoad);
-        }
-      };
-      window.addEventListener("scroll", requestRoad, { passive: true });
-      updateRoad();
-    }
+  function drawRoad() {
+    if (!road || !steps) return;
+    var rect = steps.getBoundingClientRect();
+    var vh = window.innerHeight || 800;
+    var progress = (vh * 0.85 - rect.top) / (vh * 0.6 + rect.height);
+    progress = Math.max(0, Math.min(1, progress));
+    if (reduced) progress = 1;
+    road.style.strokeDashoffset = String(100 - progress * 100);
+    if (roadDot) roadDot.setAttribute("cx", String(10 + progress * 880));
   }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  drawRoad();
 
-  // Demo contact form: never pretends to send.
+  // Demo form: prevent submit, validate required fields first, never send anything.
   var form = document.getElementById("demo-contact-form");
-  var notice = document.getElementById("demo-notice");
-  if (form && notice) {
+  if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
+      var error = document.getElementById("form-error");
+      var notice = document.getElementById("demo-notice");
+      var fields = Array.prototype.slice.call(form.querySelectorAll("[required]"));
+      var isInvalid = function (field) {
+        var value = field.value.trim();
+        if (!value) return true;
+        if (field.type === "email") return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        return false;
+      };
+      var missing = fields.filter(isInvalid);
+      fields.forEach(function (field) {
+        field.setAttribute("aria-invalid", isInvalid(field) ? "true" : "false");
+      });
+      if (missing.length > 0) {
+        if (error) error.hidden = false;
+        if (notice) notice.hidden = true;
+        missing[0].focus();
         return;
       }
-      notice.hidden = false;
-      notice.focus();
+      if (error) error.hidden = true;
+      if (notice) {
+        notice.hidden = false;
+        notice.focus();
+      }
     });
   }
 })();
