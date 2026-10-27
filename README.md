@@ -112,3 +112,11 @@ These are **five visible wheel positions** in side profile representing the fami
 The animation is now rendered in a reserved 69px desktop / 64px mobile track using a 460 × 128 SVG scaled to fit. The truck's highest point, exhaust, hood, and the wheel bottoms fit within the strip; no negative top offsets. The rest of the site, including scroll-aware header visibility, is unchanged.
 
 The markup uses styles.mccg-v10.css for cache busting. app.mccg-v9.js is unchanged.
+
+## v11 — unified branded-trailer header
+
+The stationary logo has been removed from the header. The original MCCG Logo.png is now displayed on the side of the moving semi-trailer as a separate overlaid image, avoiding changes to the supplied logo asset. The animated truck and mobile menu share a compact 72px mobile / 88px desktop header. Its existing scroll-hide and scroll-reveal behavior is retained.
+
+The side-view semi displays five axle positions: two trailer axles at the back, two tractor drive axles repositioned immediately under the trailer's front connection, and one steer axle beneath the hood. A tractor-trailer normally does not have independent front trailer wheels while hitched; the tractor's drives carry the nose through the fifth wheel. This demo preserves that mechanical arrangement.
+
+Use styles.mccg-v11.css for the deployed stylesheet. The JavaScript app.mccg-v9.js remains unchanged.
