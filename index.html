@@ -1,196 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Motor Carrier Compliance Group LLC — Helping you get on the road with confidence</title>
-  <meta name="description" content="Motor Carrier Compliance Group LLC helps trucking businesses understand their compliance responsibilities and take the next step with confidence.">
+  <meta name="theme-color" content="#102c39">
+  <meta name="description" content="Motor Carrier Compliance Group LLC helps trucking businesses understand their compliance responsibilities and move forward with confidence.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MCCG — The road ahead, made clearer.">
+  <meta property="og:description" content="Straightforward conversations about motor carrier compliance and the next step for your trucking business.">
+  <title>Motor Carrier Compliance Group LLC | The Road Ahead, Made Clearer</title>
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <noscript><style>.reveal{opacity:1;transform:none}.reveal .photo{transform:none}.primary-nav{display:flex}@media (max-width:760px){.primary-nav{flex-direction:column;position:static;padding:12px 24px 20px}}</style></noscript>
+  <script src="app.js" defer></script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-panel{display:flex!important}@media(max-width:800px){.nav-panel{position:static!important;display:block!important}.nav-toggle{display:none!important}}</style></noscript>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+  <div class="utility-bar">
+    <div class="wrap utility-inner">
+      <span class="utility-message"><span class="utility-dash" aria-hidden="true"></span> GOOD DIRECTION STARTS WITH GOOD INFORMATION</span>
+      <span class="utility-location">MOTOR CARRIER COMPLIANCE GROUP <span aria-hidden="true">/</span> MCCG</span>
+    </div>
+  </div>
 
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#home" aria-label="Motor Carrier Compliance Group LLC — home">
-        <img class="brand-logo" src="assets/Logo.png" alt="Motor Carrier Compliance Group LLC" width="180" height="46" onerror="this.style.display='none'">
-        <span class="brand-text">Motor Carrier Compliance Group LLC</span>
+      <a class="brand" href="#home" aria-label="Motor Carrier Compliance Group, home">
+        <img src="assets/Logo.png" class="brand-logo" alt="" width="66" height="54" onerror="this.hidden=true">
+        <span class="brand-copy"><strong>MCCG<span class="brand-period">.</span></strong><small>MOTOR CARRIER<br>COMPLIANCE GROUP</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">Menu</button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About MCCG</a></li>
-          <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <button type="button" class="nav-toggle" aria-controls="nav-panel" aria-expanded="false" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-panel" id="nav-panel" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#services">What we do</a></li>
+          <li><a class="nav-link" href="#about">Who we help</a></li>
+          <li><a class="nav-link" href="#get-started">Our approach</a></li>
+          <li><a class="nav-link" href="#faqs">FAQ</a></li>
         </ul>
-        <a class="btn btn-primary nav-cta" href="#contact">Request a Consultation</a>
+        <a class="button button-dark nav-cta" href="#quick-contact">Let's talk <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- 1. HERO — split layout: headline on clean white, photo in a rounded card -->
-    <section id="home" class="hero" aria-labelledby="hero-heading">
-      <div class="wrap hero-split">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="wrap hero-layout">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Motor Carrier Compliance Group LLC</p>
-          <h1 id="hero-heading">Helping you get on the road with confidence</h1>
-          <p class="hero-intro">Motor Carrier Compliance Group LLC helps trucking businesses understand their compliance responsibilities and take the next step with confidence. Contact MCCG to discuss your needs.</p>
+          <div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> FOR THE PEOPLE WHO KEEP THINGS MOVING</div>
+          <h1 id="hero-title">The road ahead,<br><em>made clearer.</em></h1>
+          <p class="hero-lead">Motor carrier compliance can feel complicated. MCCG helps trucking businesses understand their responsibilities and find a more confident way forward.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary btn-large" href="#contact">Request a Consultation</a>
-            <a class="btn btn-secondary" href="#services">See services</a>
+            <a href="#quick-contact" class="button button-accent button-large">Start a conversation <span class="button-arrow" aria-hidden="true">↗</span></a>
+            <a href="#get-started" class="text-link">See how it works <span aria-hidden="true">↗</span></a>
           </div>
-          <p class="hero-phone">Phone: <span class="placeholder">Phone number to be added by MCCG</span></p>
+          <div class="hero-audience">
+            <span class="hero-audience-label">HERE FOR</span>
+            <span>Owner-operators</span><i aria-hidden="true"></i>
+            <span>Fleet managers</span><i aria-hidden="true"></i>
+            <span>New carriers</span>
+          </div>
         </div>
-        <figure class="hero-figure">
-          <img class="hero-photo" src="https://images.pexels.com/photos/17666152/pexels-photo-17666152/free-photo-of-aerial-view-of-a-road.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Aerial view of a winding highway curving through green hills" width="1800" height="1350" fetchpriority="high">
-        </figure>
+        <div class="hero-art">
+          <div class="hero-photo-frame">
+            <img class="hero-photo" src="https://images.pexels.com/photos/17666152/pexels-photo-17666152/free-photo-of-aerial-view-of-a-road.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="A winding highway crossing a landscape of green hills" width="1800" height="1350" fetchpriority="high">
+            <div class="photo-wash" aria-hidden="true"></div>
+            <span class="hero-photo-index" aria-hidden="true">MCCG / THE ROAD AHEAD</span>
+            <span class="hero-photo-corner" aria-hidden="true">01 — 05</span>
+          </div>
+          <div class="floating-note" aria-label="From questions to a clearer next step">
+            <span class="floating-note-icon" aria-hidden="true">↗</span>
+            <span><small>THE GOAL</small><strong>Less confusion.<br>More direction.</strong></span>
+          </div>
+          <svg class="hero-route" viewBox="0 0 180 150" fill="none" aria-hidden="true">
+            <path d="M5 140 C48 140 42 84 91 91 S138 70 139 40 S160 15 173 9" stroke="currentColor" stroke-width="2" stroke-dasharray="4 8"/>
+            <circle cx="173" cy="9" r="5" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+      <div class="wrap hero-tail">
+        <span class="hero-tail-left">A STRAIGHTER LINE THROUGH THE COMPLEXITY.</span>
+        <a href="#services" class="scroll-cue">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <!-- 2. QUICK CONTACT FORM (DEMO ONLY) -->
-    <section id="quick-contact" class="section section-gray reveal" aria-labelledby="quick-contact-heading">
-      <div class="wrap narrow">
-        <div class="card card-form">
-          <h2 id="quick-contact-heading">Get in touch</h2>
-          <p class="lede">Tell us a little about yourself and how we can help.</p>
-          <form id="demo-contact-form" novalidate>
-            <div class="field">
-              <label for="field-name">Name</label>
-              <input id="field-name" name="name" type="text" autocomplete="name" required>
+    <section id="quick-contact" class="section quick-section" aria-labelledby="quick-heading">
+      <div class="wrap">
+        <div class="quick-shell reveal">
+          <div class="quick-intro">
+            <span class="section-index"><span>01</span> / THE FIRST STEP</span>
+            <h2 id="quick-heading">Let's get the<br><em>conversation started.</em></h2>
+            <p>Tell us a little about what you're navigating. This is a preview of the inquiry experience.</p>
+            <div class="quick-mark" aria-hidden="true"><span>START HERE</span><b>↘</b></div>
+          </div>
+          <form class="quick-form" id="demo-contact-form" novalidate>
+            <div class="form-heading"><strong>Introduce yourself</strong><span>DEMO FORM</span></div>
+            <div class="form-grid">
+              <div class="field"><label for="field-name">Your name <span>*</span></label><input id="field-name" name="name" autocomplete="name" placeholder="Full name" required></div>
+              <div class="field"><label for="field-phone">Phone number <span>*</span></label><input id="field-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your number" required></div>
+              <div class="field field-wide"><label for="field-email">Email address <span>*</span></label><input id="field-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+              <div class="field field-wide"><label for="field-message">What would you like to discuss? <span>*</span></label><textarea id="field-message" name="message" rows="3" placeholder="A few details help start the conversation" required></textarea></div>
             </div>
-            <div class="field">
-              <label for="field-phone">Phone</label>
-              <input id="field-phone" name="phone" type="tel" autocomplete="tel" required>
+            <p class="form-error" id="form-error" role="alert" hidden>Please complete all fields and enter a valid email address.</p>
+            <p class="form-success" id="demo-notice" role="status" tabindex="-1" hidden>Preview confirmed. This demo does not send or save messages. The live form will be connected before launch.</p>
+            <div class="form-footer">
+              <p class="form-disclaimer"><span class="disclaimer-dot" aria-hidden="true"></span> Preview only — no information is transmitted or saved.</p>
+              <button class="button button-dark" type="submit">Preview inquiry <span aria-hidden="true">↗</span></button>
             </div>
-            <div class="field">
-              <label for="field-email">Email</label>
-              <input id="field-email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="field-message">How can we help?</label>
-              <textarea id="field-message" name="message" rows="4" required></textarea>
-            </div>
-            <p class="form-note">Demo form — no message is sent when you submit this form.</p>
-            <p id="form-error" class="form-error" role="alert" hidden>Please fill in all fields, with a valid email address, before submitting.</p>
-            <button class="btn btn-primary btn-large btn-block" type="submit">Submit demo form</button>
-            <p id="demo-notice" class="demo-notice" role="status" tabindex="-1" hidden>This is a demo only. Nothing was sent, because this demo form has no backend.</p>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- 3. SERVICES -->
-    <section id="services" class="section section-white reveal" aria-labelledby="services-heading">
+    <section id="services" class="section services-section" aria-labelledby="services-heading">
       <div class="wrap">
-        <h2 id="services-heading">Services</h2>
-        <p class="lede">Service list coming from MCCG.</p>
-        <div class="card-grid">
-          <article class="card service-card"><img class="photo card-photo" src="https://images.pexels.com/photos/3618594/pexels-photo-3618594.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Close-up of vivid yellow road markings on textured asphalt" width="1200" height="1600" loading="lazy"><span class="card-gloss" aria-hidden="true"></span><div class="card-body"><h3>Service — coming from MCCG</h3><p>Details to be added by MCCG.</p></div></article>
-          <article class="card service-card"><img class="photo card-photo" src="https://images.pexels.com/photos/33983944/pexels-photo-33983944/free-photo-of-close-up-of-vintage-ford-truck-grill-in-rustic-setting.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Close-up of a weathered vintage Ford truck grille" width="1200" height="800" loading="lazy"><span class="card-gloss" aria-hidden="true"></span><div class="card-body"><h3>Service — coming from MCCG</h3><p>Details to be added by MCCG.</p></div></article>
-          <article class="card service-card"><img class="photo card-photo" src="https://images.pexels.com/photos/7541991/pexels-photo-7541991.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Close-up of a yellow truck's side mirror and door" width="1200" height="1800" loading="lazy"><span class="card-gloss" aria-hidden="true"></span><div class="card-body"><h3>Service — coming from MCCG</h3><p>Details to be added by MCCG.</p></div></article>
-          <article class="card service-card"><img class="photo card-photo" src="https://images.pexels.com/photos/12860520/pexels-photo-12860520.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Close-up of a heavy equipment tire tread on a dirt road" width="1200" height="800" loading="lazy"><span class="card-gloss" aria-hidden="true"></span><div class="card-body"><h3>Service — coming from MCCG</h3><p>Details to be added by MCCG.</p></div></article>
+        <div class="section-head reveal">
+          <div><span class="section-index"><span>02</span> / WHAT WE DO</span><h2 id="services-heading">Every mile has details.<br><em>Let's make sense of them.</em></h2></div>
+          <p>Motor carrier requirements can look different from one operation to the next. MCCG's confirmed service details will be added here before launch.</p>
         </div>
-        <a class="btn btn-primary" href="#contact">Request a Consultation</a>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-image"><img src="https://images.pexels.com/photos/3618594/pexels-photo-3618594.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Yellow lane markings on black asphalt" width="1200" height="1600" loading="lazy"><span>01 / EXPLORE</span></div>
+            <div class="service-body"><span class="service-kicker">SERVICE AREA / TO BE CONFIRMED</span><h3>The starting line</h3><p>Every journey has a starting point.</p><span class="card-arrow" aria-hidden="true">↗</span></div>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-image"><img src="https://images.pexels.com/photos/33983944/pexels-photo-33983944/free-photo-of-close-up-of-vintage-ford-truck-grill-in-rustic-setting.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Weathered metal and detail of a truck grille" width="1200" height="800" loading="lazy"><span>02 / UNDERSTAND</span></div>
+            <div class="service-body"><span class="service-kicker">SERVICE AREA / TO BE CONFIRMED</span><h3>The moving parts</h3><p>Understanding the details makes a difference.</p><span class="card-arrow" aria-hidden="true">↗</span></div>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-image"><img src="https://images.pexels.com/photos/7541991/pexels-photo-7541991.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Close-up of a yellow truck door and side mirror" width="1200" height="1800" loading="lazy"><span>03 / PREPARE</span></div>
+            <div class="service-body"><span class="service-kicker">SERVICE AREA / TO BE CONFIRMED</span><h3>The road ahead</h3><p>A clearer picture of what comes next.</p><span class="card-arrow" aria-hidden="true">↗</span></div>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-image"><img src="https://images.pexels.com/photos/12860520/pexels-photo-12860520.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Tread detail of a heavy-duty tire" width="1200" height="800" loading="lazy"><span>04 / MOVE FORWARD</span></div>
+            <div class="service-body"><span class="service-kicker">SERVICE AREA / TO BE CONFIRMED</span><h3>The bigger picture</h3><p>Keeping the important questions in view.</p><span class="card-arrow" aria-hidden="true">↗</span></div>
+          </article>
+        </div>
+        <div class="service-footnote reveal"><span class="footnote-symbol">↳</span><p>These are visual placeholders, not a confirmed list of MCCG services. Exact offerings and descriptions will be supplied by the business.</p><a href="#quick-contact">Have a question? <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
-    <!-- 4. WHO WE HELP -->
-    <section id="about" class="section section-green-tint reveal" aria-labelledby="about-heading">
-      <div class="wrap">
-        <div class="split split-photo">
-          <div>
-            <p class="eyebrow">About MCCG</p>
-            <h2 id="about-heading">Who we help</h2>
-            <p class="lede">MCCG works with people across trucking, in plain language.</p>
-            <img class="photo about-photo" src="https://images.pexels.com/photos/4800308/pexels-photo-4800308.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Close-up of a driver's hands on the steering wheel" width="1200" height="1800" loading="lazy">
-            <a class="btn btn-primary" href="#contact">Request a Consultation</a>
-          </div>
-          <ul class="help-list">
-            <li><span class="check" aria-hidden="true">✓</span>Motor carrier owners</li>
-            <li><span class="check" aria-hidden="true">✓</span>Owner-operators</li>
-            <li><span class="check" aria-hidden="true">✓</span>Fleet managers</li>
-            <li><span class="check" aria-hidden="true">✓</span>People starting a trucking company</li>
+    <section id="about" class="section people-section" aria-labelledby="about-heading">
+      <div class="wrap people-layout">
+        <div class="people-art reveal">
+          <img src="https://images.pexels.com/photos/4800308/pexels-photo-4800308.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A driver's hands on the steering wheel" width="1200" height="1800" loading="lazy">
+          <div class="people-photo-label"><span>ON YOUR SIDE OF THE ROAD</span><strong>Real people.<br>Real questions.</strong></div>
+        </div>
+        <div class="people-copy reveal">
+          <span class="section-index"><span>03</span> / WHO WE HELP</span>
+          <h2 id="about-heading">Different routes.<br><em>A shared destination.</em></h2>
+          <p>Whether you're getting started or keeping an operation moving, understanding what's expected matters.</p>
+          <ul class="audience-list">
+            <li><span>01</span><strong>Motor carrier owners</strong><span class="audience-arrow" aria-hidden="true">↗</span></li>
+            <li><span>02</span><strong>Owner-operators</strong><span class="audience-arrow" aria-hidden="true">↗</span></li>
+            <li><span>03</span><strong>Fleet managers</strong><span class="audience-arrow" aria-hidden="true">↗</span></li>
+            <li><span>04</span><strong>People starting a trucking company</strong><span class="audience-arrow" aria-hidden="true">↗</span></li>
           </ul>
+          <a class="text-link dark-link" href="#quick-contact">Let's talk about your situation <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
 
-    <!-- 5. HOW TO GET STARTED — deep navy band -->
-    <section id="get-started" class="section section-navy reveal" aria-labelledby="get-started-heading">
+    <section id="get-started" class="section approach-section" aria-labelledby="approach-heading">
+      <div class="approach-orbit" aria-hidden="true"></div>
       <div class="wrap">
-        <h2 id="get-started-heading">How to get started</h2>
-        <p class="lede lede-light">Three simple steps.</p>
+        <div class="section-head approach-head reveal">
+          <div><span class="section-index light-index"><span>04</span> / THE APPROACH</span><h2 id="approach-heading">Three simple moves.<br><em>One clearer direction.</em></h2></div>
+          <p>A straightforward place to begin. Here's what the first conversation can look like.</p>
+        </div>
         <div class="steps" id="steps">
-          <svg class="steps-road" viewBox="0 0 900 24" aria-hidden="true" preserveAspectRatio="none">
-            <path id="steps-road-path" d="M10 12 H890" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round" pathLength="100"></path>
-            <circle id="steps-road-dot" r="6" fill="#8fd0ae" cx="10" cy="12"></circle>
-          </svg>
+          <svg class="steps-road" viewBox="0 0 1000 24" preserveAspectRatio="none" aria-hidden="true"><path id="steps-road-path" d="M12 12 H988" stroke="currentColor" stroke-width="2" stroke-dasharray="6 8" fill="none" pathLength="100"/><circle id="steps-road-dot" cx="12" cy="12" r="7" fill="#b6e8cf"/></svg>
           <ol class="steps-list">
-            <li class="step"><span class="step-number" aria-hidden="true">1</span><h3>Contact MCCG</h3><p>Reach out using the contact form above.</p></li>
-            <li class="step"><span class="step-number" aria-hidden="true">2</span><h3>Discuss your needs</h3><p>Talk through what you are working on and what you need help understanding.</p></li>
-            <li class="step"><span class="step-number" aria-hidden="true">3</span><h3>Receive guidance on next steps</h3><p>Get clear guidance on the next steps for your situation.</p></li>
+            <li class="step reveal"><span class="step-number">01 <span aria-hidden="true">↗</span></span><h3>Reach out</h3><p>Start with a message about the questions you're working through.</p></li>
+            <li class="step reveal"><span class="step-number">02 <span aria-hidden="true">↗</span></span><h3>Talk it through</h3><p>Discuss your operation and the areas you'd like help understanding.</p></li>
+            <li class="step reveal"><span class="step-number">03 <span aria-hidden="true">↗</span></span><h3>Find the next step</h3><p>Work toward a clearer view of what to do next.</p></li>
           </ol>
         </div>
-        <a class="btn btn-light" href="#contact">Request a Consultation</a>
+        <a class="button button-accent approach-button" href="#quick-contact">Start with step one <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-    <!-- 6. WHY CHOOSE MCCG -->
-    <section id="why-choose" class="section section-white reveal" aria-labelledby="why-heading">
+    <section id="why-choose" class="section values-section" aria-labelledby="values-heading">
       <div class="wrap">
-        <h2 id="why-heading">Why choose MCCG</h2>
-        <p class="lede">Professional, trustworthy, and approachable — with explanations in plain, easy-to-understand language.</p>
-        <figure class="why-photo-wrap">
-          <img class="photo why-photo" src="https://images.pexels.com/photos/9229444/pexels-photo-9229444.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Aerial view of a winding road through arid brown mountains" width="1600" height="899" loading="lazy">
-        </figure>
-        <div class="card-grid why-grid">
-          <article class="card"><span class="card-gloss" aria-hidden="true"></span><h3>Professional and trustworthy</h3><p class="placeholder">Details to be added by MCCG.</p></article>
-          <article class="card"><span class="card-gloss" aria-hidden="true"></span><h3>Approachable and easy to understand</h3><p class="placeholder">Details to be added by MCCG.</p></article>
-          <article class="card"><span class="card-gloss" aria-hidden="true"></span><h3>Focused on your next step</h3><p class="placeholder">Details to be added by MCCG.</p></article>
+        <div class="values-intro reveal"><span class="section-index"><span>05</span> / WHAT MATTERS</span><h2 id="values-heading">Professional where it counts.<br><em>Human where it matters.</em></h2></div>
+        <div class="values-visual reveal">
+          <img src="https://images.pexels.com/photos/9229444/pexels-photo-9229444.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="An aerial view of a winding mountain road" width="1600" height="899" loading="lazy">
+          <div class="values-visual-caption"><span>THE BIG PICTURE</span><strong>Clarity changes<br>the journey.</strong></div>
         </div>
-        <div class="card card-soft">
-          <p><strong>Credentials:</strong> <span class="placeholder">Credentials to be added by MCCG.</span></p>
-          <p><strong>Testimonials:</strong> <span class="placeholder">Testimonials coming soon.</span> No quotes are shown here until MCCG provides them.</p>
+        <div class="values-grid">
+          <article class="value-card reveal"><span class="value-index">/ 01</span><h3>Clear communication</h3><p>Complex topics deserve explanations that make sense without unnecessary jargon.</p></article>
+          <article class="value-card reveal"><span class="value-index">/ 02</span><h3>A thoughtful approach</h3><p>Every operation has its own circumstances, questions, and priorities.</p></article>
+          <article class="value-card reveal"><span class="value-index">/ 03</span><h3>Forward focus</h3><p>The point of a good conversation is a more understandable next step.</p></article>
+        </div>
+        <div class="verification-note reveal"><span aria-hidden="true">ⓘ</span> Business credentials and client testimonials will be added only when MCCG provides verified information.</div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+      <div class="wrap">
+        <div class="contact-panel reveal">
+          <div class="contact-panel-bg" aria-hidden="true"></div>
+          <div class="contact-panel-content">
+            <span class="section-index light-index"><span>06</span> / YOUR NEXT TURN</span>
+            <h2 id="contact-heading">Where do we<br><em>go from here?</em></h2>
+            <p>Good questions deserve a place to start. Tell MCCG what you're working on and take the first step toward a clearer direction.</p>
+            <a class="button button-accent button-large" href="#quick-contact">Open inquiry form <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="contact-panel-side">
+            <span>START WITH A CONVERSATION</span>
+            <div class="contact-compass" aria-hidden="true"><span>↗</span></div>
+            <p>Phone & contact information<br><strong>To be added by MCCG</strong></p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. FINAL CONTACT -->
-    <section id="contact" class="section section-gray reveal" aria-labelledby="contact-heading">
-      <div class="wrap narrow">
-        <div class="card card-cta card-cta-navy">
-          <h2 id="contact-heading">Contact MCCG</h2>
-          <p class="lede lede-light">Contact MCCG to discuss your needs.</p>
-          <p>Phone: <span class="placeholder-light">Phone number to be added by MCCG</span></p>
-          <p>Contact details: <span class="placeholder-light">Contact details to be added by MCCG.</span></p>
-          <a class="btn btn-light btn-large" href="#quick-contact">Request a Consultation</a>
-          <p class="small-note small-note-light">The quick contact form above is a demo with no backend until MCCG connects a live form.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ PLACEHOLDER (after the seven brief sections, so the FAQs nav item has a destination) -->
-    <section id="faqs" class="section section-white reveal" aria-labelledby="faqs-heading">
-      <div class="wrap narrow">
-        <h2 id="faqs-heading">FAQs</h2>
-        <p class="placeholder">FAQs coming from MCCG.</p>
-        <p>Questions and answers will be added here once MCCG confirms them.</p>
+    <section class="section faq-section" id="faqs" aria-labelledby="faq-heading">
+      <div class="wrap faq-inner reveal">
+        <div><span class="section-index"><span>07</span> / FREQUENTLY ASKED</span><h2 id="faq-heading">Questions are<br><em>always welcome.</em></h2></div>
+        <div class="faq-box"><span class="faq-plus" aria-hidden="true">+</span><h3>Answers are on their way.</h3><p>We'll publish MCCG's confirmed FAQs here. Until then, the best place to begin is a conversation.</p><a class="text-link dark-link" href="#quick-contact">Get in touch <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>&copy; <span id="year">2026</span> Motor Carrier Compliance Group LLC</p>
-      <p>Phone: <span class="placeholder-light">Phone number to be added by MCCG</span></p>
-      <a class="btn btn-light" href="#contact">Request a Consultation</a>
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="footer-brand" href="#home">MCCG<span>.</span></a>
+        <p>Helping you get on the road with confidence.</p>
+        <a class="footer-up" href="#home" aria-label="Back to top">↑</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> MOTOR CARRIER COMPLIANCE GROUP LLC</span>
+        <nav aria-label="Footer navigation"><a href="#services">What we do</a><a href="#about">Who we help</a><a href="#faqs">FAQ</a><a href="#quick-contact">Contact</a></nav>
+        <span>DEMO SITE / CONTENT PENDING APPROVAL</span>
+      </div>
     </div>
   </footer>
-
-  <script src="app.js" defer></script>
 </body>
 </html>
