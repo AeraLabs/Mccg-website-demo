@@ -1,4 +1,4 @@
-// MCCG demo v2 — no network calls, no backend, no storage.
+// MCCG demo v3 — no network calls, no backend, no storage.
 // Demo form: validate required fields, then show an on-page notice only.
 (function () {
   "use strict";
@@ -42,18 +42,16 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  // Lighter hero parallax: ridge drifts a few pixels, highway a touch more.
-  var ridge = document.querySelector(".scenery-ridge");
-  var highway = document.querySelector(".scenery-highway");
+  // Lighter hero parallax: photo drifts a few pixels while it is on screen.
+  var heroPhoto = document.querySelector(".hero-photo");
   var ticking = false;
   function onScroll() {
     if (ticking) return;
     ticking = true;
     window.requestAnimationFrame(function () {
       var y = window.scrollY || 0;
-      if (!reduced && y < 600) {
-        if (ridge) ridge.style.transform = "translateY(" + (y * 0.04).toFixed(1) + "px)";
-        if (highway) highway.style.transform = "translateY(" + (y * 0.08).toFixed(1) + "px)";
+      if (!reduced && y < 600 && heroPhoto) {
+        heroPhoto.style.transform = "translateY(" + (y * 0.06).toFixed(1) + "px) scale(1.06)";
       }
       drawRoad();
       ticking = false;
